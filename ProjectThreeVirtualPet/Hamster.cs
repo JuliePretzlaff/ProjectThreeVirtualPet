@@ -111,14 +111,14 @@ namespace ProjectThreeVirtualPet
             if (toyGiven == "wheel")
             {
                 boredom = boredom + 2;
-                thirst = thirst - 2;
-                hunger = hunger - 2;
+                thirst = thirst - 1;
+                hunger = hunger - 1;
             }
             else if (toyGiven == "running ball")
             {
                 boredom = boredom + 3;
-                thirst = thirst - 3;
-                hunger = hunger - 3;
+                thirst = thirst - 1;
+                hunger = hunger - 1;
             }
             else if(toyGiven == "ladder")
             {
@@ -145,6 +145,8 @@ namespace ProjectThreeVirtualPet
                     Console.WriteLine("\nYour pet was bored to tears and bit you!  It's not so bored anymore...");
                     boredom = boredom + 1;
                 }
+
+
 
     //ticket method generating random results to change the hamster's status:
     public void Tick()
@@ -190,14 +192,26 @@ namespace ProjectThreeVirtualPet
         }
 
         //method to display hamster art:
-        //public static void HamsterArt()
-        //{
-        //   string art1 = @"  _           _");
-        //   string art2 = @"(`-`;-"```"-;`-`)";
-           
-        //}
-        
-    }
+        public static void HamsterArt()
+        {
+            Console.WriteLine(@"        _           _");
+            Console.WriteLine(@"      (`-`;-'```'-;`-`) ");
+            Console.WriteLine(@"       \.'         './");
+            Console.WriteLine(@"       /             \");
+            Console.WriteLine(@"       ;   0     0   ;");
+            Console.WriteLine(@"      /| =         = |\");
+            Console.WriteLine(@"     ; \   '._Y_.'   / ;");
+            Console.WriteLine(@"    ;   `-._ \|/ _.-'   ;");
+            Console.WriteLine(@"    ;       `---'       ;");
+            Console.WriteLine(@"    ;    ---.   .---    ;");
+            Console.WriteLine(@"   /;  '--._ \ / _.--   ;\");
+            Console.WriteLine(@"  :  `.   `/|| ||\`   .'  :");
+            Console.WriteLine(@"   '.  '-._       _.-'   .'");
+            Console.WriteLine(@"    (((-`  -------   `-)))");
+            Console.WriteLine(@"jgs image from http://www.chris.com/ascii/joan/www.geocities.com/SoHo/7373/pets2.html");
 
+
+        }
+    }
 }
 

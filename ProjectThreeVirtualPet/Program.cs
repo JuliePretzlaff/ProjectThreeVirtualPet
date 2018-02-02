@@ -11,11 +11,15 @@ namespace ProjectThreeVirtualPet
         static void Main(string[] args)
         {
             //Greeintg:
-            Console.WriteLine("Hello, please meet your new virtual hamster! Isn't it cute!?  \nTo begin, type in a whole number to find out if your hamster is male or female: ");
-            int genderNumber = int.Parse(Console.ReadLine());
+            Console.WriteLine("Hello, please meet your new virtual hamster! Isn't it cute!?");
 
             //method to display art of super cute hamster:
-            //Hamster.HamsterArt();
+            Hamster.HamsterArt();
+
+            Console.WriteLine("\nTo begin, type in a whole number to find out if your hamster is male or female: ");
+            int genderNumber = int.Parse(Console.ReadLine());
+           
+         
 
          
 
