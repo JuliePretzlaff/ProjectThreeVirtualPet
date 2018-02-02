@@ -131,6 +131,52 @@ namespace ProjectThreeVirtualPet
                 Console.WriteLine("That's not a very fun toy...");
             }
         }
+
+        //to change mood
+        public void MoodImprovement()
+        {
+            mood = "happy";
+            Console.WriteLine("{0} is now {1}!", name, mood);
+        }
+
+        //ticket method generating random results to change the hamster's status:
+        public void Tick()
+        {
+            Random r = new Random();
+            int[] luckyNumbers = new int[1];
+            for (int i = 0; i < luckyNumbers.Length; i++)
+            {
+                luckyNumbers[i] = r.Next(-2, 2);
+            }
+
+            //determining level of boredom:
+            boredom = boredom + luckyNumbers[0];
+
+            //decrease hunger
+            hunger = hunger--;
+
+            //determinining mood:
+            if(luckyNumbers[0] == -2)
+            {
+                mood = "scared";
+            }
+            else if (luckyNumbers[0] == -1)
+            {
+                mood = "sleepy";
+            }
+            else if (luckyNumbers[0] == 0)
+            {
+                mood = "cranky";
+            }
+            else if (luckyNumbers[0] == 1)
+            {
+                mood = "content";
+            }
+            else if (luckyNumbers[0] == 2)
+            {
+                mood = "happy";
+            }
+        }
         
     }
 

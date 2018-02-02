@@ -42,7 +42,7 @@ namespace ProjectThreeVirtualPet
                 Console.WriteLine("Type 4 to cuddle with {0} to improve mood.", userHamsterOne.Name);
                 Console.WriteLine("Type 5 to quit this program.");
                 userMenuInput = int.Parse(Console.ReadLine());
-
+                userHamsterOne.Tick();
                 switch (userMenuInput)
                 {
                     case 1:
@@ -63,12 +63,18 @@ namespace ProjectThreeVirtualPet
                         break;
 
                     case 4:
+                        userHamsterOne.MoodImprovement();
+                        break;
+
+                    case 5:
                         break;
 
                     default:
                         Console.WriteLine("Please enter a valid choice!");
                         break;
                 }
+
+               
             } while (userMenuInput != 5);
 
 
