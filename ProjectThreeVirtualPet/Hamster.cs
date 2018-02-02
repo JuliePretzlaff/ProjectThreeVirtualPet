@@ -82,17 +82,17 @@ namespace ProjectThreeVirtualPet
             {
                 this.hunger = hunger + 2;
                 this.thirst = thirst - 2;
-                Console.WriteLine("{0} is not as hungry but is now a little more thirsty!", Name);
+                Console.WriteLine("\n{0} is not as hungry but is now a little more thirsty!", Name);
             }
             else if(meal == "snack")
             {
                 this.hunger = hunger + 1;
                 this.thirst = thirst - 2;
-                Console.WriteLine("{0} is not as hungry but is now a little more thirsty!", Name);
+                Console.WriteLine("\n{0} is not as hungry but is now a little more thirsty!", Name);
             }
             else
             {
-                Console.WriteLine("{0} is still hungry!", name);
+                Console.WriteLine("\n{0} is still hungry!", name);
             }
 
         }
@@ -101,7 +101,7 @@ namespace ProjectThreeVirtualPet
         public void GiveWater()
         {
             thirst = thirst + 2;
-            Console.WriteLine("{0} thanks you for the water.", name);
+            Console.WriteLine("\n{0} thanks you for the water.", name);
         }
 
 
@@ -128,20 +128,34 @@ namespace ProjectThreeVirtualPet
             }
             else
             {
-                Console.WriteLine("That's not a very fun toy...");
+                Console.WriteLine("\nThat's not a very fun toy...");
             }
         }
 
-        //to change mood
+        //method to change mood
         public void MoodImprovement()
         {
             mood = "happy";
-            Console.WriteLine("{0} is now {1}!", name, mood);
+            Console.WriteLine("\n{0} is now {1}!", name, mood);
         }
 
-        //ticket method generating random results to change the hamster's status:
-        public void Tick()
+        //too bored method, called if hamster gets too bored:
+         public void TooBored()
+                {
+                    Console.WriteLine("\nYour pet was bored to tears and bit you!  It's not so bored anymore...");
+                    boredom = boredom + 1;
+                }
+
+    //ticket method generating random results to change the hamster's status:
+    public void Tick()
         {
+            //decrease hunger
+            hunger = hunger-1;
+
+            //some conditionals 
+          
+
+            //random number generator:
             Random r = new Random();
             int[] luckyNumbers = new int[1];
             for (int i = 0; i < luckyNumbers.Length; i++)
@@ -149,13 +163,10 @@ namespace ProjectThreeVirtualPet
                 luckyNumbers[i] = r.Next(-2, 2);
             }
 
-            //determining level of boredom:
+            //determining level of boredom using random number:
             boredom = boredom + luckyNumbers[0];
-
-            //decrease hunger
-            hunger = hunger--;
-
-            //determinining mood:
+        
+            //determinining mood: using random number:
             if(luckyNumbers[0] == -2)
             {
                 mood = "scared";
@@ -177,6 +188,14 @@ namespace ProjectThreeVirtualPet
                 mood = "happy";
             }
         }
+
+        //method to display hamster art:
+        //public static void HamsterArt()
+        //{
+        //   string art1 = @"  _           _");
+        //   string art2 = @"(`-`;-"```"-;`-`)";
+           
+        //}
         
     }
 

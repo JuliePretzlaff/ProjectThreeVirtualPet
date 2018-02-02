@@ -11,31 +11,54 @@ namespace ProjectThreeVirtualPet
         static void Main(string[] args)
         {
             //Greeintg:
-            Console.WriteLine("Hello, please meet your new virtual hamster! Isn't it cute!?  To begin, type in a whole number to find out if your hamster is male or female: ");
+            Console.WriteLine("Hello, please meet your new virtual hamster! Isn't it cute!?  \nTo begin, type in a whole number to find out if your hamster is male or female: ");
             int genderNumber = int.Parse(Console.ReadLine());
+
+            //method to display art of super cute hamster:
+            //Hamster.HamsterArt();
+
          
 
             //Determining the hamster gender & naming:
             Console.WriteLine(Hamster.GenderSurprise(genderNumber));
 
-            Console.WriteLine("Now, please give your hamster a name: ");
+            Console.WriteLine("\nNow, please give your hamster a name: ");
             string nameIt = Console.ReadLine();
 
             //Creating the new hamster instance:
             Hamster userHamsterOne = new Hamster(nameIt);
 
             //Menu discription and access:
-            Console.WriteLine("Great name!  Now let's begin!  Below you will see the current status of your hamster. \nAll hamster conditions are based on a scale of 1-10.  \nThe higher the value, the more satisfied {0} is.  \nThe lower the value, the less satisfied {0}, and might be need of your attention!", userHamsterOne.Name);
+            Console.WriteLine("\nGreat name!  Now let's begin!  \nBelow you will see the current status display for your hamster. \nAll hamster conditions are based on a scale of 1-10.  \nThe higher the value, the more satisfied {0} is.  \nThe lower the value, the less satisfied {0} is. \nBe aware of any low values, as {0} might be need of your attention! \nThe current status display will try to alert you of any alarming values. ", userHamsterOne.Name);
 
             int userMenuInput;
             do
             {
-                Console.WriteLine("Current status of " + userHamsterOne.Name + ": ");
+                Console.WriteLine("\nCurrent status of " + userHamsterOne.Name + ": ");
                 Console.WriteLine("Hunger: " + userHamsterOne.Hunger);
                 Console.WriteLine("Thirst: " + userHamsterOne.Thirst);
                 Console.WriteLine("Boredom: " + userHamsterOne.Boredom);
                 Console.WriteLine("Mood: " + userHamsterOne.Mood);
-                Console.WriteLine("Choose an option from the menu to continue: ");
+
+
+                //some contitionals to call attention to certain statuses:
+                if(userHamsterOne.Boredom<1)
+                {
+                    userHamsterOne.TooBored();
+                }
+
+                if (userHamsterOne.Hunger < 4)
+                {
+                    Console.WriteLine("Your pet is very hungry!  Why won't you feed it?!");
+                }
+
+                if (userHamsterOne.Thirst < 4)
+                {
+                    Console.WriteLine("Your pet is very thirsty!  Isn't it about time to give it some water?!");
+                }
+
+                
+                Console.WriteLine("\nChoose an option from the menu to continue: ");
                 Console.WriteLine("Type 1 to feed {0}.", userHamsterOne.Name);
                 Console.WriteLine("Type 2 to give water to {0}.", userHamsterOne.Name);
                 Console.WriteLine("Type 3 to give {0} a toy to play with.", userHamsterOne.Name);
