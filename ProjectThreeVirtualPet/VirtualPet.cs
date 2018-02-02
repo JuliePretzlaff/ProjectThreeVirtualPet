@@ -46,12 +46,12 @@ namespace ProjectThreeVirtualPet
 
 
         //Hamster Constructors:
-        public Hamster()
-        {
+        public Hamster ()
+            {
             //default constructor
-        }
+            }
 
-        public Hamster(string name)
+        public Hamster (string name)
         {
             this.name = name;
             this.hunger = 8;
@@ -78,13 +78,13 @@ namespace ProjectThreeVirtualPet
         //method to feed
         public void FeedHamster(string meal)
         {
-            if (meal == "meal")
+            if(meal == "meal")
             {
                 this.hunger = hunger + 2;
                 this.thirst = thirst - 2;
                 Console.WriteLine("\n{0} is not as hungry but is now a little more thirsty!", Name);
             }
-            else if (meal == "snack")
+            else if(meal == "snack")
             {
                 this.hunger = hunger + 1;
                 this.thirst = thirst - 2;
@@ -120,7 +120,7 @@ namespace ProjectThreeVirtualPet
                 thirst = thirst - 1;
                 hunger = hunger - 1;
             }
-            else if (toyGiven == "ladder")
+            else if(toyGiven == "ladder")
             {
                 boredom = boredom + 1;
                 thirst = thirst - 1;
@@ -140,22 +140,22 @@ namespace ProjectThreeVirtualPet
         }
 
         //too bored method, called if hamster gets too bored:
-        public void TooBored()
-        {
-            Console.WriteLine("\nYour pet was bored to tears and bit you!  It's not so bored anymore...");
-            boredom = boredom + 1;
-        }
+         public void TooBored()
+                {
+                    Console.WriteLine("\nYour pet was bored to tears and bit you!  It's not so bored anymore...");
+                    boredom = boredom + 1;
+                }
 
 
 
-        //ticket method generating random results to change the hamster's status:
-        public void Tick()
+    //ticket method generating random results to change the hamster's status:
+    public void Tick()
         {
             //decrease hunger
-            hunger = hunger - 1;
+            hunger = hunger-1;
 
             //some conditionals 
-
+          
 
             //random number generator:
             Random r = new Random();
@@ -167,9 +167,9 @@ namespace ProjectThreeVirtualPet
 
             //determining level of boredom using random number:
             boredom = boredom + luckyNumbers[0];
-
+        
             //determinining mood: using random number:
-            if (luckyNumbers[0] == -2)
+            if(luckyNumbers[0] == -2)
             {
                 mood = "scared";
             }

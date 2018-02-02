@@ -38,11 +38,12 @@ namespace ProjectThreeVirtualPet
             int userMenuInput;
             do
             {
+                string[] conditions = new string[4] { "Hunger", "Thirst", "Boredom", "Mood" };
                 Console.WriteLine("\nCurrent status of " + userHamsterOne.Name + ": ");
-                Console.WriteLine("Hunger: " + userHamsterOne.Hunger);
-                Console.WriteLine("Thirst: " + userHamsterOne.Thirst);
-                Console.WriteLine("Boredom: " + userHamsterOne.Boredom);
-                Console.WriteLine("Mood: " + userHamsterOne.Mood);
+                Console.WriteLine(conditions[0] + ": " + userHamsterOne.Hunger);
+                Console.WriteLine(conditions[1] + ": " + userHamsterOne.Thirst);
+                Console.WriteLine(conditions[2] + ": " + userHamsterOne.Boredom);
+                Console.WriteLine(conditions[3] + ": " + userHamsterOne.Mood);
 
 
                 //some contitionals to call attention to certain statuses:
