@@ -62,6 +62,8 @@ namespace ProjectThreeVirtualPet
 
 
         //Hamster Methods:
+
+        //method to determine gender:
         public static string GenderSurprise(int userNumber)
         {
             if (userNumber % 2 == 0)
@@ -148,14 +150,12 @@ namespace ProjectThreeVirtualPet
 
 
 
-        //ticket method generating random results to change the hamster's status:
+        //tick method, generating random results to change the hamster's status
+        //executed each time the loop is completed/menu is displayed:
         public void Tick()
         {
             //decrease hunger
             hunger = hunger - 1;
-
-            //some conditionals 
-
 
             //random number generator:
             Random r = new Random();

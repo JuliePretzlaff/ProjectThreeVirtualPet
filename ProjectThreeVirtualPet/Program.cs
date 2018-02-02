@@ -18,10 +18,7 @@ namespace ProjectThreeVirtualPet
 
             Console.WriteLine("\nTo begin, type in a whole number to find out if your hamster is male or female: ");
             int genderNumber = int.Parse(Console.ReadLine());
-           
-         
-
-         
+          
 
             //Determining the hamster gender & naming:
             Console.WriteLine(Hamster.GenderSurprise(genderNumber));
@@ -29,8 +26,10 @@ namespace ProjectThreeVirtualPet
             Console.WriteLine("\nNow, please give your hamster a name: ");
             string nameIt = Console.ReadLine();
 
+
             //Creating the new hamster instance:
             Hamster userHamsterOne = new Hamster(nameIt);
+
 
             //Menu discription and access:
             Console.WriteLine("\nGreat name!  Now let's begin!  \nBelow you will see the current status display for your hamster. \nAll hamster conditions are based on a scale of 1-10.  \nThe higher the value, the more satisfied {0} is.  \nThe lower the value, the less satisfied {0} is. \nBe aware of any low values, as {0} might be need of your attention! \nThe current status display will try to alert you of any alarming values. ", userHamsterOne.Name);
@@ -104,12 +103,6 @@ namespace ProjectThreeVirtualPet
 
                
             } while (userMenuInput != 5);
-
-
-
-
-
-
         }
     }
 }
