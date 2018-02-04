@@ -10,12 +10,12 @@ namespace ProjectThreeVirtualPet
     {
 
         //Hamster Fields
-
         private string name;
         private int hunger;
         private int thirst;
         private int boredom;
         private string mood;
+
 
         //Hamster Properties;
         public string Name
@@ -82,13 +82,13 @@ namespace ProjectThreeVirtualPet
         {
             if (meal == "meal")
             {
-                this.hunger = hunger + 2;
+                this.hunger = hunger + 3;
                 this.thirst = thirst - 2;
                 Console.WriteLine("\n{0} is not as hungry but is now a little more thirsty!", Name);
             }
             else if (meal == "snack")
             {
-                this.hunger = hunger + 1;
+                this.hunger = hunger + 2;
                 this.thirst = thirst - 2;
                 Console.WriteLine("\n{0} is not as hungry but is now a little more thirsty!", Name);
             }
@@ -145,9 +145,17 @@ namespace ProjectThreeVirtualPet
         public void TooBored()
         {
             Console.WriteLine("\nYour pet was bored to tears and bit you!  It's not so bored anymore...");
-            boredom = boredom + 1;
+            boredom = boredom + 3;
         }
 
+
+        //too hungry method, called if hamster gets too hungery:
+        public void TooHungry()
+        {
+            Console.WriteLine("\nYour hamster was starving so it broke into the fridge to eat your carrots!");
+            hunger = hunger + 3;
+        }
+       
 
 
         //tick method, generating random results to change the hamster's status
@@ -157,7 +165,7 @@ namespace ProjectThreeVirtualPet
             //decrease hunger
             hunger = hunger - 1;
 
-            //random number generator:
+            //random number generator to determine mood and boredom level:
             Random r = new Random();
             int[] luckyNumbers = new int[1];
             for (int i = 0; i < luckyNumbers.Length; i++)

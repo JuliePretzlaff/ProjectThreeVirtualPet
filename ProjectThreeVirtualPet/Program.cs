@@ -32,7 +32,12 @@ namespace ProjectThreeVirtualPet
 
 
             //Menu discription and access:
-            Console.WriteLine("\nGreat name!  Now let's begin!  \nBelow you will see the current status display for your hamster. \nAll hamster conditions are based on a scale of 1-10.  \nThe higher the value, the more satisfied {0} is.  \nThe lower the value, the less satisfied {0} is. \nBe aware of any low values, as {0} might be need of your attention! \nThe current status display will try to alert you of any alarming values. ", userHamsterOne.Name);
+            Console.WriteLine("\nGreat name!  Now let's begin!  " +
+                "\nBelow you will see the current status display for your hamster. " +
+                "\nAll hamster conditions are based on a scale of 1-10.  " +
+                "\nThe higher the value, the more satisfied {0} is.  " +
+                "\nThe lower the value, the less satisfied {0} is. " +
+                "\nBe aware of any low values, as {0} might be need of your attention! \nThe current status display will try to alert you of any alarming values. ", userHamsterOne.Name);
 
             int userMenuInput;
             do
@@ -45,8 +50,8 @@ namespace ProjectThreeVirtualPet
                 Console.WriteLine(conditions[3] + ": " + userHamsterOne.Mood);
 
 
-                //some contitionals to call attention to certain statuses:
-                if(userHamsterOne.Boredom<1)
+             //some contitionals (that will call methods) to bring attention to certain low statuses:
+                if(userHamsterOne.Boredom < 1)
                 {
                     userHamsterOne.TooBored();
                 }
@@ -61,7 +66,12 @@ namespace ProjectThreeVirtualPet
                     Console.WriteLine("Your pet is very thirsty!  Isn't it about time to give it some water?!");
                 }
 
-                
+                if(userHamsterOne.Hunger < 1)
+                {
+                    userHamsterOne.TooHungry();
+                }
+
+               //user option menu:
                 Console.WriteLine("\nChoose an option from the menu to continue: ");
                 Console.WriteLine("Type 1 to feed {0}.", userHamsterOne.Name);
                 Console.WriteLine("Type 2 to give water to {0}.", userHamsterOne.Name);
@@ -73,9 +83,9 @@ namespace ProjectThreeVirtualPet
                 switch (userMenuInput)
                 {
                     case 1:
-                        Console.WriteLine("Would you like to feed {0} a meal or a snack?", userHamsterOne.Name);
-                        string mealChoice = Console.ReadLine().ToLower();
-                        userHamsterOne.FeedHamster(mealChoice);
+                            Console.WriteLine("Would you like to feed {0} a meal or a snack?", userHamsterOne.Name);
+                            string mealChoice = Console.ReadLine().ToLower();
+                            userHamsterOne.FeedHamster(mealChoice);
                         break;
 
                     case 2:
